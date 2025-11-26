@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #000;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -19,21 +19,15 @@
   font-style: normal;
 }
 
-body {
-  margin: 0;
+.instrument-sans {
+  font-family: "Instrument Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-
-  a:hover {
-    color: #747bff;
-  }
-
-  button {
-    background-color: #f9f9f9;
-  }
+body {
+  margin: 0;
 }

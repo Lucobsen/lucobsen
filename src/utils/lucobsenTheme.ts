@@ -11,6 +11,11 @@ export const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: ['Limelight', 'sans-serif', 'system-ui'].join(','),
+    fontFamily: [
+      'Limelight',
+      'Instrument Sans',
+      'sans-serif',
+      'system-ui',
+    ].join(','),
   },
 });
