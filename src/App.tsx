@@ -73,8 +73,7 @@ const App = () => {
           <Typography variant="h5" fontFamily="Instrument Sans">
             Hi, my name is Luke, nerd by day, dancer by night!<br></br>I was
             born and raised in Ireland, before moving to the Netherlands in
-            2021.
-            <br></br>For years I have worked developing my skills as a Web
+            2021. For years I have worked developing my skills as a Web
             Developer, Amateur Photographer, Salsa Dancer, and Musician.
             <br></br>Now these skills are your's to make use of!
           </Typography>
@@ -86,13 +85,48 @@ const App = () => {
           position="sticky"
           bottom={0}
           left={0}
-          height={isSmallScreen ? 1000 : 450}
-          width="100%"
+          height="fit-content"
           sx={{
-            background: 'linear-gradient(340deg, #0272BD 20%, #002A4F 60%)',
+            background: 'linear-gradient(340deg, #002A4F 0%, #02BD7C 100%)',
           }}
-          mt={isSmallScreen ? 5 : 10}
-        ></Stack>
+          padding={({ spacing }) => spacing(isSmallScreen ? 5 : 10)}
+          direction={isSmallScreen ? 'column' : 'row'}
+          spacing={isSmallScreen ? 6 : 10}
+          justifyContent="center"
+        >
+          <Box
+            component="img"
+            src="luke_face.jpeg"
+            width={isSmallScreen ? '100%' : '300px'}
+            height={isSmallScreen ? '400px' : '100%'}
+          ></Box>
+
+          <Stack>
+            <Typography variant="h4">Contact Info</Typography>
+            <Typography variant="h5" fontFamily="Instrument Sans">
+              Email Address
+            </Typography>
+            <Typography variant="h5" fontFamily="Instrument Sans">
+              Instagram
+            </Typography>
+          </Stack>
+
+          <Stack>
+            <Typography variant="h4">Useful Links</Typography>
+            <Typography variant="h5" fontFamily="Instrument Sans">
+              Dancing
+            </Typography>
+            <Typography variant="h5" fontFamily="Instrument Sans">
+              Music
+            </Typography>
+            <Typography variant="h5" fontFamily="Instrument Sans">
+              Photography
+            </Typography>
+            <Typography variant="h5" fontFamily="Instrument Sans">
+              Web Development
+            </Typography>
+          </Stack>
+        </Stack>
       </footer>
     </>
   );
