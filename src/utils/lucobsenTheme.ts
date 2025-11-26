@@ -1,4 +1,4 @@
-import { createTheme } from "@mui/material";
+import { createTheme } from '@mui/material';
 
 export const theme = createTheme({
   breakpoints: {
@@ -11,6 +11,6 @@ export const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: ["Limelight", "sans-serif", "system-ui"].join(","),
+    fontFamily: ['Limelight', 'sans-serif', 'system-ui'].join(','),
   },
 });
