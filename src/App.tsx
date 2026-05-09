@@ -48,7 +48,7 @@ const App = () => {
             justifySelf: 'center',
             width: '85%',
             maxWidth: 1200,
-            margin: '0 80px',
+            margin: '80px 0',
           }}
         >
           <Grid container sx={{ rowGap: isMediumScreen ? 1 : 0 }}>
@@ -96,7 +96,7 @@ const App = () => {
             justifySelf: 'center',
             width: '85%',
             maxWidth: 1200,
-            margin: '0 80px',
+            margin: '80px 0',
           }}
         >
           <Typography variant="h2">Dancer</Typography>
@@ -131,7 +131,7 @@ const App = () => {
             justifySelf: 'center',
             width: '85%',
             maxWidth: 1200,
-            margin: '0 80px',
+            margin: '80px 0',
           }}
         >
           <Typography variant="h2">Developer</Typography>
@@ -174,7 +174,7 @@ const App = () => {
             justifySelf: 'center',
             width: '85%',
             maxWidth: 1200,
-            margin: '0 80px',
+            margin: '80px 0',
           }}
         >
           <Typography variant="h2">Musician</Typography>
@@ -192,7 +192,7 @@ const App = () => {
             justifySelf: 'center',
             width: '85%',
             maxWidth: 1200,
-            margin: '0 80px',
+            margin: '80px 0',
           }}
         >
           <Typography variant="h2">Photographer</Typography>
