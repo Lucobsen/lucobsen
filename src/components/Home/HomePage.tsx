@@ -6,7 +6,7 @@ import { HomeSection } from './HomeSection/HomeSection';
 import { NavItems } from './NavItems/NavItems';
 
 export const HomePage = () => {
-  const { isSmallScreen, isMediumScreen } = useContext(ScreenSizeContext);
+  const { isSmallScreen } = useContext(ScreenSizeContext);
 
   return (
     <>
