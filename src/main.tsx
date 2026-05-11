@@ -8,7 +8,6 @@ import { routeTree } from './routeTree.gen.ts';
 const router = createRouter({
   routeTree,
   scrollRestoration: true,
-  scrollRestorationBehavior: 'smooth',
 });
 
 // Register the router instance for type safety

@@ -13,6 +13,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .limelight-regular {
   font-family: 'Limelight', sans-serif;
   font-weight: 400;

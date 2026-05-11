@@ -12,7 +12,7 @@ export const HomeSection = ({ title, id, children }: HomeSectionProps) => {
   const { isSmallScreen } = useContext(ScreenSizeContext);
 
   return (
-    <section id={id}>
+    <section id={id} style={{ scrollMarginTop: 30 }}>
       <Stack
         sx={{
           textAlign: 'center',
