@@ -1,11 +1,12 @@
-import { Box, Container, Grid, Link, Stack, Typography } from '@mui/material';
+import { Box, Container, Link, Stack, Typography } from '@mui/material';
 
 import { useContext } from 'react';
 import { ScreenSizeContext } from '../../utils/screen-size-context';
 import { HomeSection } from './HomeSection/HomeSection';
+import { NavItems } from './NavItems/NavItems';
 
 export const HomePage = () => {
-  const { isSmallScreen, isMediumScreen } = useContext(ScreenSizeContext);
+  const { isSmallScreen } = useContext(ScreenSizeContext);
 
   return (
     <>
@@ -53,32 +54,7 @@ export const HomePage = () => {
             margin: '80px 0',
           }}
         >
-          <Grid container sx={{ rowGap: isMediumScreen ? 1 : 0 }}>
-            <Grid
-              size={{ md: 3, sm: 6, xs: 12 }}
-              sx={{ borderRight: isSmallScreen ? 0 : 1, borderColor: '#fff' }}
-            >
-              <Typography variant="h4">Dancer</Typography>
-            </Grid>
-
-            <Grid
-              size={{ md: 3, sm: 6, xs: 12 }}
-              sx={{ borderRight: isMediumScreen ? 0 : 1, borderColor: '#fff' }}
-            >
-              <Typography variant="h4">Developer</Typography>
-            </Grid>
-
-            <Grid
-              size={{ md: 3, sm: 6, xs: 12 }}
-              sx={{ borderRight: isSmallScreen ? 0 : 1, borderColor: '#fff' }}
-            >
-              <Typography variant="h4">Musician</Typography>
-            </Grid>
-
-            <Grid size={{ md: 3, sm: 6, xs: 12 }}>
-              <Typography variant="h4">Photographer</Typography>
-            </Grid>
-          </Grid>
+          <NavItems />
 
           {/* TODO: my past, hobbies & interests */}
           <Typography variant="h5" sx={{ fontFamily: 'Instrument Sans' }}>
@@ -90,7 +66,7 @@ export const HomePage = () => {
         </Stack>
 
         {/* TODO: add dancing videos, pictures, more info about schools I teach at, private class info, testimonials */}
-        <HomeSection title="Dancer">
+        <HomeSection title="Dancer" id="dancer">
           <>
             <Typography variant="h5" sx={{ fontFamily: 'Instrument Sans' }}>
               I started dancing salsa when I moved to Amsterdam, over four years
@@ -117,7 +93,7 @@ export const HomePage = () => {
         </HomeSection>
 
         {/* TODO: add personal projects and work projects */}
-        <HomeSection title="Developer">
+        <HomeSection title="Developer" id="developer">
           <>
             <Typography variant="h5" sx={{ fontFamily: 'Instrument Sans' }}>
               I studied at the National University of Ireland, Galway,
@@ -152,7 +128,7 @@ export const HomePage = () => {
         </HomeSection>
 
         {/* TODO: Links to my music, photos of me performing, guitar lessons, instruments I can play, testimonials */}
-        <HomeSection title="Musician">
+        <HomeSection title="Musician" id="musician">
           <>
             <Typography variant="h5" sx={{ fontFamily: 'Instrument Sans' }}>
               I have been singing and playing music for as long as I can
@@ -178,7 +154,7 @@ export const HomePage = () => {
         </HomeSection>
 
         {/* TODO: Photo albums */}
-        <HomeSection title="Photographer">
+        <HomeSection title="Photographer" id="photographer">
           <Typography variant="h5" sx={{ fontFamily: 'Instrument Sans' }}>
             I like to take my camera with me wherever and I and do my best to
             capture as much of the worlds beauty as I can. With every photo my

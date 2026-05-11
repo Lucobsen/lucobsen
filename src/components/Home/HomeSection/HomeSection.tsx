@@ -4,14 +4,15 @@ import { ScreenSizeContext } from '../../../utils/screen-size-context';
 
 type HomeSectionProps = {
   title: string;
+  id: string;
   children: JSX.Element;
 };
 
-export const HomeSection = ({ title, children }: HomeSectionProps) => {
+export const HomeSection = ({ title, id, children }: HomeSectionProps) => {
   const { isSmallScreen } = useContext(ScreenSizeContext);
 
   return (
-    <section>
+    <section id={id}>
       <Stack
         sx={{
           textAlign: 'center',
