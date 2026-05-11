@@ -1,9 +1,10 @@
 import { Box, Container, Grid, Link, Stack, Typography } from '@mui/material';
-import { useContext } from 'react';
-import { HomeSection } from './components/HomeSection/HomeSection';
-import { ScreenSizeContext } from './utils/screen-size-context';
 
-const App = () => {
+import { useContext } from 'react';
+import { ScreenSizeContext } from '../../utils/screen-size-context';
+import { HomeSection } from './HomeSection/HomeSection';
+
+export const HomePage = () => {
   const { isSmallScreen, isMediumScreen } = useContext(ScreenSizeContext);
 
   return (
@@ -237,5 +238,3 @@ const App = () => {
     </>
   );
 };
-
-export default App;

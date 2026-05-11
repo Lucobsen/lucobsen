@@ -1,17 +1,21 @@
-import { ThemeProvider } from '@mui/material';
+import { createRouter, RouterProvider } from '@tanstack/react-router';
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import App from './App.tsx';
 import './index.css';
-import { theme } from './utils/lucobsenTheme.ts';
-import { ScreenSizeContextProvider } from './utils/screen-size-context-provider.tsx';
+import { routeTree } from './routeTree.gen.ts';
+
+// Create a new router instance
+const router = createRouter({ routeTree, scrollRestoration: true });
+
+// Register the router instance for type safety
+declare module '@tanstack/react-router' {
+  interface Register {
+    router: typeof router;
+  }
+}
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <ThemeProvider theme={theme}>
-      <ScreenSizeContextProvider>
-        <App />
-      </ScreenSizeContextProvider>
-    </ThemeProvider>
+    <RouterProvider router={router} notFoundMode="root" />
   </StrictMode>
 );
