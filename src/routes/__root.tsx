@@ -1,4 +1,4 @@
-import { ThemeProvider } from '@mui/material';
+import { ThemeProvider, Typography } from '@mui/material';
 import { createRootRoute, Outlet } from '@tanstack/react-router';
 import { TanStackRouterDevtools } from '@tanstack/react-router-devtools';
 import { theme } from '../utils/lucobsenTheme';
@@ -12,5 +12,14 @@ export const Route = createRootRoute({
         <TanStackRouterDevtools />
       </ScreenSizeContextProvider>
     </ThemeProvider>
+  ),
+  notFoundComponent: () => (
+    <Typography
+      sx={{ fontFamily: 'Chau Philomene One', mb: 4, color: '#000' }}
+      variant="h1"
+      align="center"
+    >
+      Page not found!
+    </Typography>
   ),
 });
