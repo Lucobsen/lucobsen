@@ -66,7 +66,7 @@ export const HomePage = () => {
         </Stack>
 
         {/* TODO: add dancing videos, pictures, more info about schools I teach at, private class info, testimonials */}
-        <HomeSection title="Dancer" id="dancer">
+        <HomeSection title="Dancer" id="dancer" link="/dancer">
           <>
             <Typography variant="h5" sx={{ fontFamily: 'Instrument Sans' }}>
               I started dancing salsa when I moved to Amsterdam, over four years
@@ -93,7 +93,7 @@ export const HomePage = () => {
         </HomeSection>
 
         {/* TODO: add personal projects and work projects */}
-        <HomeSection title="Developer" id="developer">
+        <HomeSection title="Developer" id="developer" link="/developer">
           <>
             <Typography variant="h5" sx={{ fontFamily: 'Instrument Sans' }}>
               I studied at the National University of Ireland, Galway,
@@ -128,7 +128,7 @@ export const HomePage = () => {
         </HomeSection>
 
         {/* TODO: Links to my music, photos of me performing, guitar lessons, instruments I can play, testimonials */}
-        <HomeSection title="Musician" id="musician">
+        <HomeSection title="Musician" id="musician" link="/musician">
           <>
             <Typography variant="h5" sx={{ fontFamily: 'Instrument Sans' }}>
               I have been singing and playing music for as long as I can
@@ -154,7 +154,11 @@ export const HomePage = () => {
         </HomeSection>
 
         {/* TODO: Photo albums */}
-        <HomeSection title="Photographer" id="photographer">
+        <HomeSection
+          title="Photographer"
+          id="photographer"
+          link="/photographer"
+        >
           <Typography variant="h5" sx={{ fontFamily: 'Instrument Sans' }}>
             I like to take my camera with me wherever and I and do my best to
             capture as much of the worlds beauty as I can. With every photo my
