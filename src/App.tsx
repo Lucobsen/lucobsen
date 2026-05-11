@@ -1,5 +1,6 @@
 import { Box, Container, Grid, Link, Stack, Typography } from '@mui/material';
 import { useContext } from 'react';
+import { HomeSection } from './components/HomeSection/HomeSection';
 import { ScreenSizeContext } from './utils/screen-size-context';
 
 const App = () => {
@@ -84,123 +85,105 @@ const App = () => {
             born and raised in Ireland, before moving to the Netherlands in
             2021. For years I have worked developing my skills as a Web
             Developer, Amateur Photographer, Salsa Dancer, and Musician.
-            <br></br>Now these skills are your's to make use of!
           </Typography>
         </Stack>
 
         {/* TODO: add dancing videos, pictures, more info about schools I teach at, private class info, testimonials */}
-        <Stack
-          sx={{
-            textAlign: 'center',
-            gap: 6,
-            justifySelf: 'center',
-            width: '85%',
-            maxWidth: 1200,
-            margin: '80px 0',
-          }}
-        >
-          <Typography variant="h2">Dancer</Typography>
+        <HomeSection title="Dancer">
+          <>
+            <Typography variant="h5" sx={{ fontFamily: 'Instrument Sans' }}>
+              I started dancing salsa when I moved to Amsterdam, over four years
+              ago. Practcing for long hours at salsa school (Extremos) or in my
+              own time, I slowly improved and began to develop more confidence
+              in my dancing.
+            </Typography>
 
-          <Typography variant="h5" sx={{ fontFamily: 'Instrument Sans' }}>
-            I started dancing salsa when I moved to Amsterdam, over four years
-            ago. Practcing for long hours at salsa school (Extremos) or in my
-            own time, I slowly improved and began to develop more confidence in
-            my dancing.
-          </Typography>
+            <Typography variant="h5" sx={{ fontFamily: 'Instrument Sans' }}>
+              I danced in some shows and helped out as an Ambassador at
+              Extremos, further growing my knowledge of salsa. In time, I took
+              on the roles of Teacher at two schools, Extremos and Lumos.
+              Through many classes and workshops I began to improve at one thing
+              that you cannot learn in class or on the dancefloor; I began to
+              improve as a teacher.
+            </Typography>
 
-          <Typography variant="h5" sx={{ fontFamily: 'Instrument Sans' }}>
-            I danced in some shows and helped out as an Ambassador at Extremos,
-            further growing my knowledge of salsa. In time, I took on the roles
-            of Teacher at two schools, Extremos and Lumos. Through many classes
-            and workshops I began to improve at one thing that you cannot learn
-            in class or on the dancefloor; I began to improve as a teacher.
-          </Typography>
-
-          <Typography variant="h5" sx={{ fontFamily: 'Instrument Sans' }}>
-            By identifying the needs and wants of my students and listening as
-            well as watching, I am able to impart my knowedlge onto my students
-            in a comprehensable and fun format.
-          </Typography>
-        </Stack>
+            <Typography variant="h5" sx={{ fontFamily: 'Instrument Sans' }}>
+              By identifying the needs and wants of my students and listening as
+              well as watching, I am able to impart my knowedlge onto my
+              students in a comprehensable and fun format.
+            </Typography>
+          </>
+        </HomeSection>
 
         {/* TODO: add personal projects and work projects */}
-        <Stack
-          sx={{
-            textAlign: 'center',
-            gap: 6,
-            justifySelf: 'center',
-            width: '85%',
-            maxWidth: 1200,
-            margin: '80px 0',
-          }}
-        >
-          <Typography variant="h2">Developer</Typography>
+        <HomeSection title="Developer">
+          <>
+            <Typography variant="h5" sx={{ fontFamily: 'Instrument Sans' }}>
+              I studied at the National University of Ireland, Galway,
+              graduating with a Bachelors in Computer Science & Information
+              Technology. Having already months of work experience from my
+              intership, I walked into my first job after graduating at a
+              company called Brightwork.
+            </Typography>
 
-          <Typography variant="h5" sx={{ fontFamily: 'Instrument Sans' }}>
-            I studied at the National University of Ireland, Galway, graduating
-            with a Bachelors in Computer Science & Information Technology.
-            Having already months of work experience from my intership, I walked
-            into my first job after graduating at a company called Brightwork.
-          </Typography>
+            <Typography variant="h5" sx={{ fontFamily: 'Instrument Sans' }}>
+              Working for three years as a Fronted Developer at Brightwork, I
+              developed many skills in a variety of technologies. From Frontend
+              Frameworks like Aurelia, Angular and React, to Design Principles
+              and Ways of Working.
+            </Typography>
 
-          <Typography variant="h5" sx={{ fontFamily: 'Instrument Sans' }}>
-            Working for three years as a Fronted Developer at Brightwork, I
-            developed many skills in a variety of technologies. From Frontend
-            Frameworks like Aurelia, Angular and React, to Design Principles and
-            Ways of Working.
-          </Typography>
+            <Typography variant="h5" sx={{ fontFamily: 'Instrument Sans' }}>
+              After working in Ireland for those initial three years, I set my
+              sights on moving abroad to learn and sicovery new things. In the
+              Autumn of 2021, I moved to Amsterdam. Not long after moving, I
+              settled into a position as a Frontend Web Developer at the
+              Amsterdam Airport, Schiphol, where I have worked ever since.
+            </Typography>
 
-          <Typography variant="h5" sx={{ fontFamily: 'Instrument Sans' }}>
-            After working in Ireland for those initial three years, I set my
-            sights on moving abroad to learn and sicovery new things. In the
-            Autumn of 2021, I moved to Amsterdam. Not long after moving, I
-            settled into a position as a Frontend Web Developer at the Amsterdam
-            Airport, Schiphol, where I have worked ever since.
-          </Typography>
-
-          <Typography variant="h5" sx={{ fontFamily: 'Instrument Sans' }}>
-            In my spare time, I also build and manage websites for other smaller
-            businesses and my friends, such as{' '}
-            {<Link href="https://www.lumoslatin.nl/">LUMOS</Link>} and this site
-            itself.
-          </Typography>
-        </Stack>
+            <Typography variant="h5" sx={{ fontFamily: 'Instrument Sans' }}>
+              In my spare time, I also build and manage websites for other
+              smaller businesses and my friends, such as{' '}
+              {<Link href="https://www.lumoslatin.nl/">LUMOS</Link>} and this
+              site itself.
+            </Typography>
+          </>
+        </HomeSection>
 
         {/* TODO: Links to my music, photos of me performing, guitar lessons, instruments I can play, testimonials */}
-        <Stack
-          sx={{
-            textAlign: 'center',
-            gap: 6,
-            justifySelf: 'center',
-            width: '85%',
-            maxWidth: 1200,
-            margin: '80px 0',
-          }}
-        >
-          <Typography variant="h2">Musician</Typography>
+        <HomeSection title="Musician">
+          <>
+            <Typography variant="h5" sx={{ fontFamily: 'Instrument Sans' }}>
+              I have been singing and playing music for as long as I can
+              remember. From a young age I sang in school plays and in more high
+              end productions with the stage school I attended.
+            </Typography>
 
-          <Typography variant="h5" sx={{ fontFamily: 'Instrument Sans' }}>
-            Music Info
-          </Typography>
-        </Stack>
+            <Typography variant="h5" sx={{ fontFamily: 'Instrument Sans' }}>
+              In secondary school I started to learn how to play the guitar so I
+              could have some accompaniment when I sang. This led me to joining
+              many bands later when I went to college. Once of which was my own
+              band called SCRAM. We played a number of gigs and even made some
+              amateur recordings.
+            </Typography>
+
+            <Typography variant="h5" sx={{ fontFamily: 'Instrument Sans' }}>
+              When COVID hit I started to write some songs with just my acoustic
+              guitar. Once I moved to the Netherlands I then set about playing
+              these songs at some small Open-Mic nights. Eventually I recorded
+              three of these songs.
+            </Typography>
+          </>
+        </HomeSection>
 
         {/* TODO: Photo albums */}
-        <Stack
-          sx={{
-            textAlign: 'center',
-            gap: 6,
-            justifySelf: 'center',
-            width: '85%',
-            maxWidth: 1200,
-            margin: '80px 0',
-          }}
-        >
-          <Typography variant="h2">Photographer</Typography>
-
+        <HomeSection title="Photographer">
           <Typography variant="h5" sx={{ fontFamily: 'Instrument Sans' }}>
-            Photographer Info
+            I like to take my camera with me wherever and I and do my best to
+            capture as much of the worlds beauty as I can. With every photo my
+            skills as a photographer get better and better.
           </Typography>
-        </Stack>
+        </HomeSection>
       </Container>
 
       <footer>
