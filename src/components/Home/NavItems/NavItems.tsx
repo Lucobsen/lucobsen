@@ -42,15 +42,6 @@ export const NavItems = () => {
 
       <Grid
         size={{ md: 3, sm: 6, xs: 12 }}
-        sx={{ borderRight: isMediumScreen ? 0 : 1, borderColor: '#fff' }}
-      >
-        <Link to="/" hash="developer">
-          <CategoryButton label="Developer" />
-        </Link>
-      </Grid>
-
-      <Grid
-        size={{ md: 3, sm: 6, xs: 12 }}
         sx={{ borderRight: isSmallScreen ? 0 : 1, borderColor: '#fff' }}
       >
         <Link to="/" hash="musician">
@@ -59,8 +50,8 @@ export const NavItems = () => {
       </Grid>
 
       <Grid size={{ md: 3, sm: 6, xs: 12 }}>
-        <Link to="/" hash="photographer">
-          <CategoryButton label="Photographer" />
+        <Link to="/" hash="streamer">
+          <CategoryButton label="streamer" />
         </Link>
       </Grid>
     </Grid>

@@ -9,25 +9,19 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as PhotographerRouteImport } from './routes/photographer'
+import { Route as StreamerRouteImport } from './routes/streamer'
 import { Route as MusicianRouteImport } from './routes/musician'
-import { Route as DeveloperRouteImport } from './routes/developer'
 import { Route as DancerRouteImport } from './routes/dancer'
 import { Route as IndexRouteImport } from './routes/index'
 
-const PhotographerRoute = PhotographerRouteImport.update({
-  id: '/photographer',
-  path: '/photographer',
+const StreamerRoute = StreamerRouteImport.update({
+  id: '/streamer',
+  path: '/streamer',
   getParentRoute: () => rootRouteImport,
 } as any)
 const MusicianRoute = MusicianRouteImport.update({
   id: '/musician',
   path: '/musician',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DeveloperRoute = DeveloperRouteImport.update({
-  id: '/developer',
-  path: '/developer',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DancerRoute = DancerRouteImport.update({
@@ -44,54 +38,44 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/dancer': typeof DancerRoute
-  '/developer': typeof DeveloperRoute
   '/musician': typeof MusicianRoute
-  '/photographer': typeof PhotographerRoute
+  '/streamer': typeof StreamerRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/dancer': typeof DancerRoute
-  '/developer': typeof DeveloperRoute
   '/musician': typeof MusicianRoute
-  '/photographer': typeof PhotographerRoute
+  '/streamer': typeof StreamerRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/dancer': typeof DancerRoute
-  '/developer': typeof DeveloperRoute
   '/musician': typeof MusicianRoute
-  '/photographer': typeof PhotographerRoute
+  '/streamer': typeof StreamerRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/dancer' | '/developer' | '/musician' | '/photographer'
+  fullPaths: '/' | '/dancer' | '/musician' | '/streamer'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/dancer' | '/developer' | '/musician' | '/photographer'
-  id:
-    | '__root__'
-    | '/'
-    | '/dancer'
-    | '/developer'
-    | '/musician'
-    | '/photographer'
+  to: '/' | '/dancer' | '/musician' | '/streamer'
+  id: '__root__' | '/' | '/dancer' | '/musician' | '/streamer'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   DancerRoute: typeof DancerRoute
-  DeveloperRoute: typeof DeveloperRoute
   MusicianRoute: typeof MusicianRoute
-  PhotographerRoute: typeof PhotographerRoute
+  StreamerRoute: typeof StreamerRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/photographer': {
-      id: '/photographer'
-      path: '/photographer'
-      fullPath: '/photographer'
-      preLoaderRoute: typeof PhotographerRouteImport
+    '/streamer': {
+      id: '/streamer'
+      path: '/streamer'
+      fullPath: '/streamer'
+      preLoaderRoute: typeof StreamerRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/musician': {
@@ -99,13 +83,6 @@ declare module '@tanstack/react-router' {
       path: '/musician'
       fullPath: '/musician'
       preLoaderRoute: typeof MusicianRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/developer': {
-      id: '/developer'
-      path: '/developer'
-      fullPath: '/developer'
-      preLoaderRoute: typeof DeveloperRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/dancer': {
@@ -128,9 +105,8 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   DancerRoute: DancerRoute,
-  DeveloperRoute: DeveloperRoute,
   MusicianRoute: MusicianRoute,
-  PhotographerRoute: PhotographerRoute,
+  StreamerRoute: StreamerRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -9,11 +9,13 @@ import tseslint from 'typescript-eslint';
 export default defineConfig([
   globalIgnores(['dist']),
   {
+    plugins: {
+      reactHooks: reactHooks.configs['recommended-latest'],
+    },
     files: ['**/*.{ts,tsx}'],
     extends: [
       js.configs.recommended,
       tseslint.configs.recommended,
-      reactHooks.configs.flat.recommended,
       reactRefresh.configs.vite,
       eslintConfigPrettier,
     ],
