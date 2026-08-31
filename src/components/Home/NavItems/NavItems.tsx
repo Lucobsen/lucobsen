@@ -32,7 +32,7 @@ export const NavItems = () => {
   return (
     <Grid container sx={{ rowGap: isMediumScreen ? 1 : 0 }}>
       <Grid
-        size={{ md: 3, sm: 6, xs: 12 }}
+        size={{ md: 4, sm: 4, xs: 12 }}
         sx={{ borderRight: isSmallScreen ? 0 : 1, borderColor: '#fff' }}
       >
         <Link to="/" hash="dancer">
@@ -41,7 +41,7 @@ export const NavItems = () => {
       </Grid>
 
       <Grid
-        size={{ md: 3, sm: 6, xs: 12 }}
+        size={{ md: 4, sm: 4, xs: 12 }}
         sx={{ borderRight: isSmallScreen ? 0 : 1, borderColor: '#fff' }}
       >
         <Link to="/" hash="musician">
@@ -49,7 +49,7 @@ export const NavItems = () => {
         </Link>
       </Grid>
 
-      <Grid size={{ md: 3, sm: 6, xs: 12 }}>
+      <Grid size={{ md: 4, sm: 4, xs: 12 }}>
         <Link to="/" hash="streamer">
           <CategoryButton label="streamer" />
         </Link>

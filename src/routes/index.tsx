@@ -1,10 +1,52 @@
-import { Box, Container, Stack, Typography } from '@mui/material';
+import { Instagram } from '@mui/icons-material';
+import {
+  Box,
+  Container,
+  IconButton,
+  Link as MuiLink,
+  Stack,
+  SvgIcon,
+  Typography,
+} from '@mui/material';
 import { createFileRoute } from '@tanstack/react-router';
-
 import { useContext } from 'react';
 import { HomeSection } from '../components/Home/HomeSection/HomeSection';
 import { NavItems } from '../components/Home/NavItems/NavItems';
 import { ScreenSizeContext } from '../utils/screen-size-context';
+
+import { Link } from '@mui/material';
+import { type JSX } from 'react';
+import TwitchIcon from '../icons/TwitchIcon';
+
+type SocialIconButtonProps = {
+  text: string;
+  link: string;
+  children: JSX.Element;
+};
+
+const SocialIconButton = ({ text, link, children }: SocialIconButtonProps) => {
+  const { isSmallScreen } = useContext(ScreenSizeContext);
+
+  return (
+    <Link
+      sx={{
+        gap: 1,
+        alignItems: 'center',
+        display: 'flex',
+        flexDirection: 'row',
+      }}
+      underline="none"
+      target="_blank"
+      href={link}
+    >
+      {children}
+
+      <Typography sx={{ color: '#000' }} variant={isSmallScreen ? 'h6' : 'h5'}>
+        {text}
+      </Typography>
+    </Link>
+  );
+};
 
 export const Route = createFileRoute('/')({
   component: () => {
@@ -151,12 +193,81 @@ export const Route = createFileRoute('/')({
 
             <Stack>
               <Typography variant="h4">Contact Info</Typography>
-              <Typography variant="h5" sx={{ fontFamily: 'Instrument Sans' }}>
-                Email Address
-              </Typography>
-              <Typography variant="h5" sx={{ fontFamily: 'Instrument Sans' }}>
-                Instagram
-              </Typography>
+              <MuiLink
+                sx={{
+                  gap: 1,
+                  alignItems: 'center',
+                  display: 'flex',
+                  flexDirection: 'row',
+                }}
+                underline="none"
+                href="mailto:info@lumoslatin.nl"
+              >
+                <Typography
+                  sx={{ color: '#fff', fontFamily: 'Instrument Sans' }}
+                  variant={isSmallScreen ? 'h6' : 'h5'}
+                >
+                  lucobsenarts@gmail.com
+                </Typography>
+              </MuiLink>
+
+              <Stack direction="row">
+                <MuiLink
+                  underline="none"
+                  target="_blank"
+                  href="https://www.instagram.com/lucobsen"
+                  sx={{
+                    gap: 1,
+                    alignItems: 'center',
+                    display: 'flex',
+                    flexDirection: 'row',
+                  }}
+                >
+                  <IconButton
+                    aria-label="instagram"
+                    disableRipple
+                    sx={{
+                      width: 30,
+                      height: 30,
+                      borderRadius: '20%',
+                      background:
+                        'linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%) !important',
+                      color: '#fff',
+                    }}
+                  >
+                    <SvgIcon inheritViewBox>
+                      <Instagram />
+                    </SvgIcon>
+                  </IconButton>
+                </MuiLink>
+
+                <MuiLink
+                  underline="none"
+                  target="_blank"
+                  href="https://www.twitch.tv/lucobsen"
+                  sx={{
+                    gap: 1,
+                    alignItems: 'center',
+                    display: 'flex',
+                    flexDirection: 'row',
+                  }}
+                >
+                  <IconButton
+                    aria-label="twitch"
+                    disableRipple
+                    sx={{
+                      width: 30,
+                      height: 30,
+                      borderRadius: '20%',
+                      color: '#fff',
+                    }}
+                  >
+                    <SvgIcon inheritViewBox>
+                      <TwitchIcon />
+                    </SvgIcon>
+                  </IconButton>
+                </MuiLink>
+              </Stack>
             </Stack>
 
             <Stack>
