@@ -10,10 +10,10 @@ import {
 } from '@mui/material';
 import { createFileRoute } from '@tanstack/react-router';
 import { useContext } from 'react';
-import { HomeSection } from '../components/Home/HomeSection/HomeSection';
-import { NavItems } from '../components/Home/NavItems/NavItems';
 import { ScreenSizeContext } from '../utils/screen-size-context';
 
+import { HomeSection } from '../components/HomeSection/HomeSection';
+import { NavItems } from '../components/NavItems/NavItems';
 import TwitchIcon from '../icons/TwitchIcon';
 
 export const Route = createFileRoute('/')({
