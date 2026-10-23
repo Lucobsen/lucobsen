@@ -1,7 +1,7 @@
 import { Button, Grid } from '@mui/material';
 import { Link } from '@tanstack/react-router';
 import { useContext } from 'react';
-import { ScreenSizeContext } from '../../../utils/screen-size-context';
+import { ScreenSizeContext } from '../../utils/screen-size-context';
 
 type CategoryButtonProps = {
   label: string;

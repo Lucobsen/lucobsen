@@ -1,7 +1,7 @@
 import { Stack, Typography } from '@mui/material';
 import { Link } from '@tanstack/react-router';
 import { useContext, type JSX } from 'react';
-import { ScreenSizeContext } from '../../../utils/screen-size-context';
+import { ScreenSizeContext } from '../../utils/screen-size-context';
 
 type HomeSectionProps = {
   title: string;
