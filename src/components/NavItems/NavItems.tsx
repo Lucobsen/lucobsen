@@ -12,14 +12,18 @@ const CategoryButton = ({ label }: CategoryButtonProps) => (
     variant="text"
     disableRipple
     sx={{
-      color: '#fff',
+      color: 'text.primary',
       fontSize: '40px',
       transition: ({ transitions }) =>
-        transitions.create(['transform'], {
+        transitions.create(['transform', 'color'], {
           duration: transitions.duration.standard,
         }),
 
-      ':hover': { transform: 'scale(1.05)' },
+      ':hover': {
+        transform: 'scale(1.05)',
+        color: 'primary.light',
+        backgroundColor: 'transparent',
+      },
     }}
   >
     {label}
@@ -33,7 +37,7 @@ export const NavItems = () => {
     <Grid container sx={{ rowGap: isMediumScreen ? 1 : 0 }}>
       <Grid
         size={{ md: 4, sm: 4, xs: 12 }}
-        sx={{ borderRight: isSmallScreen ? 0 : 1, borderColor: '#fff' }}
+        sx={{ borderRight: isSmallScreen ? 0 : 1, borderColor: 'divider' }}
       >
         <Link to="/" hash="dancer">
           <CategoryButton label="Dancer" />
@@ -42,7 +46,7 @@ export const NavItems = () => {
 
       <Grid
         size={{ md: 4, sm: 4, xs: 12 }}
-        sx={{ borderRight: isSmallScreen ? 0 : 1, borderColor: '#fff' }}
+        sx={{ borderRight: isSmallScreen ? 0 : 1, borderColor: 'divider' }}
       >
         <Link to="/" hash="musician">
           <CategoryButton label="Musician" />
