@@ -14,39 +14,7 @@ import { HomeSection } from '../components/Home/HomeSection/HomeSection';
 import { NavItems } from '../components/Home/NavItems/NavItems';
 import { ScreenSizeContext } from '../utils/screen-size-context';
 
-import { Link } from '@mui/material';
-import { type JSX } from 'react';
 import TwitchIcon from '../icons/TwitchIcon';
-
-type SocialIconButtonProps = {
-  text: string;
-  link: string;
-  children: JSX.Element;
-};
-
-const SocialIconButton = ({ text, link, children }: SocialIconButtonProps) => {
-  const { isSmallScreen } = useContext(ScreenSizeContext);
-
-  return (
-    <Link
-      sx={{
-        gap: 1,
-        alignItems: 'center',
-        display: 'flex',
-        flexDirection: 'row',
-      }}
-      underline="none"
-      target="_blank"
-      href={link}
-    >
-      {children}
-
-      <Typography sx={{ color: '#000' }} variant={isSmallScreen ? 'h6' : 'h5'}>
-        {text}
-      </Typography>
-    </Link>
-  );
-};
 
 export const Route = createFileRoute('/')({
   component: () => {
