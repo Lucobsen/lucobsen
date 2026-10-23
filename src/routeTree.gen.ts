@@ -9,26 +9,8 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as StreamerRouteImport } from './routes/streamer'
-import { Route as MusicianRouteImport } from './routes/musician'
-import { Route as DancerRouteImport } from './routes/dancer'
 import { Route as IndexRouteImport } from './routes/index'
 
-const StreamerRoute = StreamerRouteImport.update({
-  id: '/streamer',
-  path: '/streamer',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const MusicianRoute = MusicianRouteImport.update({
-  id: '/musician',
-  path: '/musician',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DancerRoute = DancerRouteImport.update({
-  id: '/dancer',
-  path: '/dancer',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -37,61 +19,28 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/dancer': typeof DancerRoute
-  '/musician': typeof MusicianRoute
-  '/streamer': typeof StreamerRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/dancer': typeof DancerRoute
-  '/musician': typeof MusicianRoute
-  '/streamer': typeof StreamerRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/dancer': typeof DancerRoute
-  '/musician': typeof MusicianRoute
-  '/streamer': typeof StreamerRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/dancer' | '/musician' | '/streamer'
+  fullPaths: '/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/dancer' | '/musician' | '/streamer'
-  id: '__root__' | '/' | '/dancer' | '/musician' | '/streamer'
+  to: '/'
+  id: '__root__' | '/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  DancerRoute: typeof DancerRoute
-  MusicianRoute: typeof MusicianRoute
-  StreamerRoute: typeof StreamerRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/streamer': {
-      id: '/streamer'
-      path: '/streamer'
-      fullPath: '/streamer'
-      preLoaderRoute: typeof StreamerRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/musician': {
-      id: '/musician'
-      path: '/musician'
-      fullPath: '/musician'
-      preLoaderRoute: typeof MusicianRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/dancer': {
-      id: '/dancer'
-      path: '/dancer'
-      fullPath: '/dancer'
-      preLoaderRoute: typeof DancerRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/': {
       id: '/'
       path: '/'
@@ -104,9 +53,6 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  DancerRoute: DancerRoute,
-  MusicianRoute: MusicianRoute,
-  StreamerRoute: StreamerRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -110,7 +110,7 @@ export const Route = createFileRoute('/')({
           </Stack>
 
           {/* TODO: add dancing videos, pictures, more info about schools I teach at, private class info, testimonials */}
-          <HomeSection title="Dancer" id="dancer" link="/dancer">
+          <HomeSection title="Dancer" id="dancer">
             <>
               <Typography variant="h5" sx={{ fontFamily: 'Instrument Sans' }}>
                 I started dancing salsa when I moved to Amsterdam, over four
@@ -137,8 +137,19 @@ export const Route = createFileRoute('/')({
           </HomeSection>
 
           {/* TODO: Links to my music, photos of me performing, guitar lessons, instruments I can play, testimonials */}
-          <HomeSection title="Musician" id="musician" link="/musician">
+          <HomeSection title="Musician" id="musician">
             <>
+              <iframe
+                data-testid="embed-iframe"
+                style={{ borderRadius: '12px' }}
+                src="https://open.spotify.com/embed/artist/1R1804fdvga9IHsVKwj5iO?utm_source=generator&theme=0&si=9831aa03a617418d"
+                width="100%"
+                height="352"
+                allowFullScreen={false}
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+              ></iframe>
+
               <Typography variant="h5" sx={{ fontFamily: 'Instrument Sans' }}>
                 I have been singing and playing music for as long as I can
                 remember. From a young age I sang in school plays and in more
@@ -159,14 +170,34 @@ export const Route = createFileRoute('/')({
                 about playing these songs at some small Open-Mic nights.
                 Eventually I recorded three of these songs.
               </Typography>
+
+              <iframe
+                data-testid="embed-iframe"
+                style={{ borderRadius: '12px' }}
+                src="https://open.spotify.com/embed/track/4OFjslfkK08BD8sI3dCIrB?utm_source=generator&theme=0&si=c0c82aa8a7474c59"
+                width="100%"
+                height="352"
+                allowFullScreen={false}
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+              ></iframe>
             </>
           </HomeSection>
 
           {/* TODO: Photo albums */}
-          <HomeSection title="Streamer" id="streamer" link="/streamer">
-            <Typography variant="h5" sx={{ fontFamily: 'Instrument Sans' }}>
-              Streaming stuff and things and stuff and things...
-            </Typography>
+          <HomeSection title="Streamer" id="streamer">
+            <>
+              <Typography variant="h5" sx={{ fontFamily: 'Instrument Sans' }}>
+                Streaming stuff and things and stuff and things...
+              </Typography>
+
+              <iframe
+                src="https://www.twitch.tv/lucobsen"
+                width="100%"
+                height="352"
+                allowFullScreen={false}
+              ></iframe>
+            </>
           </HomeSection>
         </Container>
 

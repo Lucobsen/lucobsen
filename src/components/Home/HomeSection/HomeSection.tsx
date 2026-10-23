@@ -1,22 +1,15 @@
-import { Button, Stack, Typography } from '@mui/material';
+import { Stack, Typography } from '@mui/material';
 import { Link } from '@tanstack/react-router';
 import { useContext, type JSX } from 'react';
 import { ScreenSizeContext } from '../../../utils/screen-size-context';
-import { Dots } from '../../Dots';
 
 type HomeSectionProps = {
   title: string;
   id: string;
   children: JSX.Element;
-  link: string;
 };
 
-export const HomeSection = ({
-  title,
-  id,
-  children,
-  link,
-}: HomeSectionProps) => {
+export const HomeSection = ({ title, id, children }: HomeSectionProps) => {
   const { isSmallScreen } = useContext(ScreenSizeContext);
 
   return (
@@ -40,22 +33,6 @@ export const HomeSection = ({
         </Link>
 
         {children}
-
-        <Link to={link} style={{ textDecoration: 'none' }}>
-          <Stack
-            direction="row"
-            sx={{ alignItems: 'baseline', justifyContent: 'center' }}
-          >
-            <Button
-              disableRipple
-              variant="text"
-              sx={{ color: '#fff', fontSize: '30px' }}
-            >
-              See more
-            </Button>
-            <Dots />
-          </Stack>
-        </Link>
       </Stack>
     </section>
   );
