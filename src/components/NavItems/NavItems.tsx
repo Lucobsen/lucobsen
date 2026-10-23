@@ -1,7 +1,7 @@
 import { Button, Grid } from '@mui/material';
 import { Link } from '@tanstack/react-router';
 import { useContext } from 'react';
-import { ScreenSizeContext } from '../../../utils/screen-size-context';
+import { ScreenSizeContext } from '../../utils/screen-size-context';
 
 type CategoryButtonProps = {
   label: string;
@@ -32,7 +32,7 @@ export const NavItems = () => {
   return (
     <Grid container sx={{ rowGap: isMediumScreen ? 1 : 0 }}>
       <Grid
-        size={{ md: 3, sm: 6, xs: 12 }}
+        size={{ md: 4, sm: 4, xs: 12 }}
         sx={{ borderRight: isSmallScreen ? 0 : 1, borderColor: '#fff' }}
       >
         <Link to="/" hash="dancer">
@@ -41,16 +41,7 @@ export const NavItems = () => {
       </Grid>
 
       <Grid
-        size={{ md: 3, sm: 6, xs: 12 }}
-        sx={{ borderRight: isMediumScreen ? 0 : 1, borderColor: '#fff' }}
-      >
-        <Link to="/" hash="developer">
-          <CategoryButton label="Developer" />
-        </Link>
-      </Grid>
-
-      <Grid
-        size={{ md: 3, sm: 6, xs: 12 }}
+        size={{ md: 4, sm: 4, xs: 12 }}
         sx={{ borderRight: isSmallScreen ? 0 : 1, borderColor: '#fff' }}
       >
         <Link to="/" hash="musician">
@@ -58,9 +49,9 @@ export const NavItems = () => {
         </Link>
       </Grid>
 
-      <Grid size={{ md: 3, sm: 6, xs: 12 }}>
-        <Link to="/" hash="photographer">
-          <CategoryButton label="Photographer" />
+      <Grid size={{ md: 4, sm: 4, xs: 12 }}>
+        <Link to="/" hash="streamer">
+          <CategoryButton label="streamer" />
         </Link>
       </Grid>
     </Grid>
