@@ -11,6 +11,7 @@ import {
 import { createFileRoute } from '@tanstack/react-router';
 import { useContext } from 'react';
 import { ScreenSizeContext } from '../utils/screen-size-context';
+import { brandGradient } from '../utils/lucobsenTheme';
 
 import { HomeSection } from '../components/HomeSection/HomeSection';
 import { NavItems } from '../components/NavItems/NavItems';
@@ -69,7 +70,10 @@ export const Route = createFileRoute('/')({
             <NavItems />
 
             {/* TODO: my past, hobbies & interests */}
-            <Typography variant="h5" sx={{ fontFamily: 'Instrument Sans' }}>
+            <Typography
+              variant="h5"
+              sx={{ color: 'text.secondary', fontFamily: 'Instrument Sans' }}
+            >
               Hi, my name is Luke, nerd by day, dancer by night!<br></br>I was
               born and raised in Ireland, before moving to the Netherlands in
               2021. For years I have worked developing my skills as a Web
@@ -80,14 +84,20 @@ export const Route = createFileRoute('/')({
           {/* TODO: add dancing videos, pictures, more info about schools I teach at, private class info, testimonials */}
           <HomeSection title="Dancer" id="dancer">
             <>
-              <Typography variant="h5" sx={{ fontFamily: 'Instrument Sans' }}>
+              <Typography
+                variant="h5"
+                sx={{ color: 'text.secondary', fontFamily: 'Instrument Sans' }}
+              >
                 I started dancing salsa when I moved to Amsterdam, over four
                 years ago. Practcing for long hours at salsa school (Extremos)
                 or in my own time, I slowly improved and began to develop more
                 confidence in my dancing.
               </Typography>
 
-              <Typography variant="h5" sx={{ fontFamily: 'Instrument Sans' }}>
+              <Typography
+                variant="h5"
+                sx={{ color: 'text.secondary', fontFamily: 'Instrument Sans' }}
+              >
                 I danced in some shows and helped out as an Ambassador at
                 Extremos, further growing my knowledge of salsa. In time, I took
                 on the roles of Teacher at two schools, Extremos and Lumos.
@@ -96,7 +106,10 @@ export const Route = createFileRoute('/')({
                 began to improve as a teacher.
               </Typography>
 
-              <Typography variant="h5" sx={{ fontFamily: 'Instrument Sans' }}>
+              <Typography
+                variant="h5"
+                sx={{ color: 'text.secondary', fontFamily: 'Instrument Sans' }}
+              >
                 By identifying the needs and wants of my students and listening
                 as well as watching, I am able to impart my knowedlge onto my
                 students in a comprehensable and fun format.
@@ -118,13 +131,19 @@ export const Route = createFileRoute('/')({
                 loading="lazy"
               ></iframe>
 
-              <Typography variant="h5" sx={{ fontFamily: 'Instrument Sans' }}>
+              <Typography
+                variant="h5"
+                sx={{ color: 'text.secondary', fontFamily: 'Instrument Sans' }}
+              >
                 I have been singing and playing music for as long as I can
                 remember. From a young age I sang in school plays and in more
                 high end productions with the stage school I attended.
               </Typography>
 
-              <Typography variant="h5" sx={{ fontFamily: 'Instrument Sans' }}>
+              <Typography
+                variant="h5"
+                sx={{ color: 'text.secondary', fontFamily: 'Instrument Sans' }}
+              >
                 In secondary school I started to learn how to play the guitar so
                 I could have some accompaniment when I sang. This led me to
                 joining many bands later when I went to college. Once of which
@@ -132,7 +151,10 @@ export const Route = createFileRoute('/')({
                 even made some amateur recordings.
               </Typography>
 
-              <Typography variant="h5" sx={{ fontFamily: 'Instrument Sans' }}>
+              <Typography
+                variant="h5"
+                sx={{ color: 'text.secondary', fontFamily: 'Instrument Sans' }}
+              >
                 When COVID hit I started to write some songs with just my
                 acoustic guitar. Once I moved to the Netherlands I then set
                 about playing these songs at some small Open-Mic nights.
@@ -155,7 +177,10 @@ export const Route = createFileRoute('/')({
           {/* TODO: Photo albums */}
           <HomeSection title="Streamer" id="streamer">
             <>
-              <Typography variant="h5" sx={{ fontFamily: 'Instrument Sans' }}>
+              <Typography
+                variant="h5"
+                sx={{ color: 'text.secondary', fontFamily: 'Instrument Sans' }}
+              >
                 Streaming stuff and things and stuff and things...
               </Typography>
 
@@ -172,7 +197,8 @@ export const Route = createFileRoute('/')({
         <footer>
           <Stack
             sx={{
-              background: 'linear-gradient(340deg, #002A4F 0%, #02BD7C 100%)',
+              background: brandGradient,
+              color: 'background.default',
               padding: ({ spacing }) => spacing(isSmallScreen ? 5 : 10),
               gap: ({ spacing }) => spacing(isSmallScreen ? 6 : 10),
               position: 'sticky',
@@ -203,7 +229,7 @@ export const Route = createFileRoute('/')({
                 href="mailto:info@lumoslatin.nl"
               >
                 <Typography
-                  sx={{ color: '#fff', fontFamily: 'Instrument Sans' }}
+                  sx={{ color: 'inherit', fontFamily: 'Instrument Sans' }}
                   variant={isSmallScreen ? 'h6' : 'h5'}
                 >
                   lucobsenarts@gmail.com
@@ -258,7 +284,7 @@ export const Route = createFileRoute('/')({
                       width: 30,
                       height: 30,
                       borderRadius: '20%',
-                      color: '#fff',
+                      color: 'inherit',
                     }}
                   >
                     <SvgIcon inheritViewBox>
@@ -271,16 +297,28 @@ export const Route = createFileRoute('/')({
 
             <Stack>
               <Typography variant="h4">Useful Links</Typography>
-              <Typography variant="h5" sx={{ fontFamily: 'Instrument Sans' }}>
+              <Typography
+                variant="h5"
+                sx={{ color: 'inherit', fontFamily: 'Instrument Sans' }}
+              >
                 Dancing
               </Typography>
-              <Typography variant="h5" sx={{ fontFamily: 'Instrument Sans' }}>
+              <Typography
+                variant="h5"
+                sx={{ color: 'inherit', fontFamily: 'Instrument Sans' }}
+              >
                 Music
               </Typography>
-              <Typography variant="h5" sx={{ fontFamily: 'Instrument Sans' }}>
+              <Typography
+                variant="h5"
+                sx={{ color: 'inherit', fontFamily: 'Instrument Sans' }}
+              >
                 Photography
               </Typography>
-              <Typography variant="h5" sx={{ fontFamily: 'Instrument Sans' }}>
+              <Typography
+                variant="h5"
+                sx={{ color: 'inherit', fontFamily: 'Instrument Sans' }}
+              >
                 Web Development
               </Typography>
             </Stack>

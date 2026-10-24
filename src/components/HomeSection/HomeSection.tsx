@@ -1,5 +1,5 @@
-import { Stack, Typography } from '@mui/material';
-import { Link } from '@tanstack/react-router';
+import { Link as MuiLink, Stack, Typography } from '@mui/material';
+import { Link as RouterLink } from '@tanstack/react-router';
 import { useContext, type JSX } from 'react';
 import { ScreenSizeContext } from '../../utils/screen-size-context';
 
@@ -24,13 +24,15 @@ export const HomeSection = ({ title, id, children }: HomeSectionProps) => {
           margin: '80px 0',
         }}
       >
-        <Link
+        <MuiLink
+          component={RouterLink}
           to="/"
           hash={id}
-          style={{ color: '#fff', textDecoration: 'none' }}
+          underline="none"
+          sx={{ color: 'primary.main' }}
         >
           <Typography variant={isSmallScreen ? 'h4' : 'h2'}>{title}</Typography>
-        </Link>
+        </MuiLink>
 
         {children}
       </Stack>
