@@ -9,7 +9,7 @@ import {
   Typography,
 } from '@mui/material';
 import { createFileRoute } from '@tanstack/react-router';
-import { useContext } from 'react';
+import { useContext, useRef } from 'react';
 import { ScreenSizeContext } from '../utils/screen-size-context';
 import { brandGradient } from '../utils/lucobsenTheme';
 
@@ -20,6 +20,7 @@ import TwitchIcon from '../icons/TwitchIcon';
 export const Route = createFileRoute('/')({
   component: () => {
     const { isSmallScreen } = useContext(ScreenSizeContext);
+    const titleRef = useRef<HTMLElement>(null);
 
     return (
       <>
@@ -44,6 +45,7 @@ export const Route = createFileRoute('/')({
               }}
             >
               <Typography
+                ref={titleRef}
                 variant={isSmallScreen ? 'h4' : 'h1'}
                 sx={{
                   textShadow: '1px 1px 2px black',
@@ -67,7 +69,7 @@ export const Route = createFileRoute('/')({
               margin: '80px 0',
             }}
           >
-            <NavItems />
+            <NavItems anchorRef={titleRef} />
 
             {/* TODO: my past, hobbies & interests */}
             <Typography
