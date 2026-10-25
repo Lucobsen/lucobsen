@@ -9,9 +9,9 @@ import {
   Typography,
 } from '@mui/material';
 import { createFileRoute } from '@tanstack/react-router';
-import { useContext } from 'react';
-import { ScreenSizeContext } from '../utils/screen-size-context';
+import { useContext, useRef } from 'react';
 import { brandGradient } from '../utils/lucobsenTheme';
+import { ScreenSizeContext } from '../utils/screen-size-context';
 
 import { HomeSection } from '../components/HomeSection/HomeSection';
 import { NavItems } from '../components/NavItems/NavItems';
@@ -20,6 +20,7 @@ import TwitchIcon from '../icons/TwitchIcon';
 export const Route = createFileRoute('/')({
   component: () => {
     const { isSmallScreen } = useContext(ScreenSizeContext);
+    const titleRef = useRef<HTMLElement>(null);
 
     return (
       <>
@@ -44,6 +45,7 @@ export const Route = createFileRoute('/')({
               }}
             >
               <Typography
+                ref={titleRef}
                 variant={isSmallScreen ? 'h4' : 'h1'}
                 sx={{
                   textShadow: '1px 1px 2px black',
@@ -51,7 +53,7 @@ export const Route = createFileRoute('/')({
                   color: '#fff',
                 }}
               >
-                Luke Jacobsen
+                Lucobsen Arts
               </Typography>
             </Stack>
           </Box>
@@ -67,7 +69,7 @@ export const Route = createFileRoute('/')({
               margin: '80px 0',
             }}
           >
-            <NavItems />
+            <NavItems anchorRef={titleRef} />
 
             {/* TODO: my past, hobbies & interests */}
             <Typography
