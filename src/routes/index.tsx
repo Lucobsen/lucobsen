@@ -10,8 +10,8 @@ import {
 } from '@mui/material';
 import { createFileRoute } from '@tanstack/react-router';
 import { useContext, useRef } from 'react';
-import { ScreenSizeContext } from '../utils/screen-size-context';
 import { brandGradient } from '../utils/lucobsenTheme';
+import { ScreenSizeContext } from '../utils/screen-size-context';
 
 import { HomeSection } from '../components/HomeSection/HomeSection';
 import { NavItems } from '../components/NavItems/NavItems';
@@ -53,7 +53,7 @@ export const Route = createFileRoute('/')({
                   color: '#fff',
                 }}
               >
-                Luke Jacobsen
+                Lucobsen Arts
               </Typography>
             </Stack>
           </Box>

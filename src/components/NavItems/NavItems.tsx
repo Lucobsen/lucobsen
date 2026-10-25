@@ -13,11 +13,20 @@ const CategoryButton = ({ label }: CategoryButtonProps) => (
     variant="text"
     disableRipple
     sx={{
-      color: 'text.primary',
-      fontSize: '40px',
+      // White while floating over the hero photo, easing to the palette
+      // green as the nav settles into the dark section below.
+      color: ({ palette }) =>
+        `color-mix(in srgb, ${palette.text.primary} calc(var(--nav-p) * 100%), #fff)`,
+      // Counteracts the wrapper's scale-down so the floating nav reads larger
+      // under the hero title without spreading the items further apart. The
+      // floating size is capped against viewport width so the three labels
+      // never collide with each other in the 3-across layout.
+      fontSize:
+        'calc(clamp(32px, 5vw, 68px) * (1 - var(--nav-p)) + 40px * var(--nav-p))',
+      whiteSpace: 'nowrap',
       textShadow: '1px 1px 2px rgb(0 0 0 / calc(1 - var(--nav-p)))',
       transition: ({ transitions }) =>
-        transitions.create(['transform', 'color'], {
+        transitions.create(['transform'], {
           duration: transitions.duration.standard,
         }),
 
@@ -44,7 +53,7 @@ export const NavItems = ({ anchorRef }: NavItemsProps) => {
 
   const borderSx = {
     borderRight: isSmallScreen ? 0 : 1,
-    borderColor: 'divider',
+    borderColor: 'rgb(255 255 255 / var(--nav-p))',
   };
 
   return (
